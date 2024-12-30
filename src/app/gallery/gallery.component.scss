@@ -1,0 +1,125 @@
+.masonry img {
+    width: 100%;
+    cursor: pointer;
+}
+
+.mItem img:hover{
+    opacity:0.5;
+    transition: .5s ease;
+}
+
+.masonry {
+    column-count: 3;
+    column-gap: 16px;
+    margin-top:5rem;
+}
+
+.masonry .mItem {
+    display: inline-block;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+@media (max-width: 1199px) {
+    .masonry {
+        column-count: 3;
+    }
+}
+
+@media (max-width: 991px) {
+    .masonry {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 767px) {
+    .masonry {
+        column-count: 1;
+    }
+}
+
+.modal-dialog {
+    display: flex;
+    height: 100vh;
+    border: none
+}
+
+.modal-header {
+    border: none
+}
+
+.modal-header .btn-close {
+    background-color: white;
+}
+
+.modal-content {
+    width: fit-content;
+    margin: auto;
+    background: transparent;
+    border: none
+}
+
+.img-fluid {
+    max-height: 75vh;
+}
+
+video {
+    width: 27rem;
+    cursor: pointer;
+
+    @media (max-width: 768px) {
+        width: 24rem
+    }
+
+    :hover {
+        color: black;
+        z-index: 3
+    }
+}
+
+.play-icon {
+    cursor: pointer;
+}
+
+.video-container {
+    position: relative;
+    display: inline-block;
+    /* Ensure it wraps around the video */
+}
+
+.video-container video {
+    width: 27rem;
+    cursor: pointer;
+
+    @media (max-width: 768px) {
+        width: 24rem
+    }
+
+    :hover {
+        color: black;
+        z-index: 3
+    }
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:white;
+    background-color: #000000b0;
+    width: 4rem;
+    padding: 5px;
+    border-radius: 8px;
+    font-size: 48px;
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.3s;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container:hover .play-icon {
+    opacity: 1;
+}

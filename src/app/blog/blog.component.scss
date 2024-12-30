@@ -1,0 +1,23 @@
+.blog-item .blog-img img {
+    transition: .5s;
+}
+
+.blog-img {
+    a {
+        font-family: 'Noto Sans';
+        text-decoration: none;
+        font-size: 14px
+    }
+}
+
+.blog-item:hover .blog-img img {
+    transform: scale(1.15);
+}
+
+.blog-item .blog-img img {
+    transition: .5s;
+}
+
+img {
+    height:15rem
+}

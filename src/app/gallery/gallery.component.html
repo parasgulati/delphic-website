@@ -1,0 +1,59 @@
+<!-- page-header.component.html -->
+<nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="">
+        <img style="max-width:10rem" src="assets/img/delphic_white.png">
+      </a>
+      <span class="text-light" style="font-family: 'Noto Sans';letter-spacing: 1px; font-size: 18px;">Gallery</span>
+    </div>
+  </nav>
+  
+
+<div class="masonry">
+    @for(item of mediaItems; track item.src) {
+        <div class="mItem">
+            <ng-container *ngIf="item.type === 'image'; else videoTemplate">
+                <img 
+                    [src]="(item.src)" 
+                    [alt]="item.alt" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#mediaModal" 
+                    (click)="setModalMedia(item.src, item.alt, item.type)"
+                >
+            </ng-container>
+            <ng-template #videoTemplate>
+                <div class="video-container">
+                    <video 
+                        [src]="(item.src)" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#mediaModal" 
+                        (click)="setModalMedia(item.src, item.alt, item.type)" 
+                    ></video>
+                    <div class="play-icon" (click)="setModalMedia(item.src, item.alt, item.type)">
+                        <i class="fas fa-play"></i> <!-- Font Awesome play icon -->
+                    </div>
+                </div>
+            </ng-template>
+        </div>
+    }
+</div>
+
+<!-- Modal Structure -->
+<div class="modal fade" id="mediaModal" tabindex="-1" aria-labelledby="mediaModalLabel" aria-hidden="true"
+style="background-color: #000000a8;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ng-container *ngIf="isImage; else videoContent">
+                    <img id="modalImage" [src]="modalSrc" [alt]="modalAlt" class="img-fluid"/>
+                </ng-container>
+                <ng-template #videoContent>
+                    <video id="modalVideo" [src]="modalSrc" controls class="img-fluid"></video>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>

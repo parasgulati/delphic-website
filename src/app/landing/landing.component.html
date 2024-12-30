@@ -1,0 +1,648 @@
+<!-- Topbar Start -->
+<div class="container-fluid bg-dark px-5 d-none d-lg-block">
+  <div class="row gx-0">
+    <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+      <div class="d-inline-flex align-items-center" style="height: 45px; gap:1.5rem">
+        <small class="text-light"><i class="fa fa-envelope me-2" style="color: #239ec2;"></i>
+          <a href="mailto:accounts@delphic.in"
+            style="color: white; text-decoration: none;font-family: 'Open Sans';">accounts&#64;delphic.in</a>
+        </small>
+        <small class="text-light"><i class="fa fa-envelope me-2" style="color: #239ec2;"></i>
+          <a href="mailto:info@delphic.in"
+            style="color: white;text-decoration: none;font-family: 'Open Sans';">info&#64;delphic.in</a>
+        </small>
+        <!-- Dropdown Menu -->
+        <div class="dropdown me-2">
+          <button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            {{ selectedRegion }}
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" (click)="updateDropdown('South Asia')">South Asia</a></li>
+            <li><a class="dropdown-item" (click)="updateDropdown('South East Asia')">South East
+                Asia</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 text-center text-lg-end">
+      <div class="d-inline-flex align-items-center" style="height: 45px;">
+        <a target="_blank" class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+          href="https://www.linkedin.com/company/delphicservices">
+          <i class="fab fa-linkedin-in fw-normal"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Topbar End -->
+
+<!-- Side NavBar Start-->
+<div class="sidenav-list">
+  <nav>
+    <ul class="nav flex-column">
+      <li class="nav-item" id="home-nav">
+        <a (click)="scrollToSection('home')" class="nav-link" [ngClass]="{'active': activeLink === 'home'}">
+          <span class="line"></span>
+        </a>
+      </li>
+      <li class="nav-item" id="about-nav">
+        <a (click)="scrollToSection('about')" class="nav-link" [ngClass]="{'active': activeLink === 'about'}">
+          <span class="line"></span>
+        </a>
+      </li>
+      <li class="nav-item" id="services-nav">
+        <a (click)="scrollToSection('services')" class="nav-link" [ngClass]="{'active': activeLink === 'services'}">
+          <span class="line"></span>
+        </a>
+      </li>
+      <li class="nav-item" id="carrers-nav">
+        <a target="_blank" href="https://www.linkedin.com/company/delphicservices" class="nav-link"
+          [ngClass]="{'active': activeLink === 'carrers'}">
+          <span class="line"></span>
+        </a>
+      </li>
+      <li class="nav-item" id="contact-nav">
+        <a (click)="scrollToSection('contact')" class="nav-link" [ngClass]="{'active': activeLink === 'contact'}">
+          <span class="line"></span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<!-- Side NavBar End-->
+
+<!-- Navbar Start -->
+<div class="container-fluid position-relative p-0 car" id="home">
+  <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0 navBgColor">
+    <a class="navbar-brand p-0">
+      <h1 class="m-0">
+        <img style="max-width:10rem" src="assets/img/delphic_white.png">
+      </h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="fa fa-bars"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse" data-aos="slide-left" data-aos-duration="2000" data-aos-once="true">
+      <div class="navbar-nav ms-auto py-0">
+        @for (item of navItems; track item.link)
+        {
+        <a class="nav-item nav-link" [ngClass]="{'active': activeLink === item.link.substring(1)}"
+          *ngIf="item.link.startsWith('#')" (click)="scrollToSection(item.link.substring(1))">
+          {{ item.label }}
+        </a>
+
+        <a class="nav-item nav-link" *ngIf="!item.link.startsWith('#')" [routerLink]="item.link"
+          target="{{ item.target }}">
+          {{ item.label }}
+        </a>
+        }
+      </div>
+
+      <!-- Dropdown visible only for smaller screens -->
+      <div class="dropdown d-sm-none me-2 d-flex justify-content-center align-items-center">
+        <button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton"
+          data-bs-toggle="dropdown" aria-expanded="false" style="    font-family: 'Oswald', sans-serif;
+      letter-spacing: 1.5px;">
+          {{ selectedRegion }}
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" (click)="updateDropdown('South Asia')">South Asia</a></li>
+          <li><a class="dropdown-item" (click)="updateDropdown('South East Asia')">South East
+              Asia</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="banner_img">
+        <div class="main-bgcolor">
+          <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+            <div class="p-3" style="max-width: 900px;">
+              <!-- Heading with fade-up animation -->
+              <p class="text-white mb-3" data-aos="fade-up" data-aos-duration="1500"
+                style="font-family: 'Oswald';font-weight: 400; letter-spacing: 2px; font-size: 1.7rem;">
+                Transforming Businesses Through
+                Innovation and Outsourcing Excellence
+              </p>
+              <!-- Main heading with zoom-in animation -->
+              <p class="display-1 text-white mb-md-4 animated zoomIn" data-aos="zoom-in" data-aos-duration="1500"
+                style="font-family: 'Oswald'; font-size: 5rem; text-shadow: 1px 1px 8px black;">
+                Your Success is Our Mission
+              </p><br>
+              <!-- Call-to-action button with fade-up animation -->
+              <a class="btn btn-primary py-md-2 px-md-4 me-3 animated pulse" (click)="scrollToSection('about')"
+                data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
+                Get Started
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Navbar End -->
+
+<!-- About Section Start -->
+<div class="container-fluid py-5 fadeInUp" data-wow-delay="0.1s" id="about">
+  <div class="container">
+    <div class="section-title text-center position-relative pb-3 mx-auto" style="max-width: 45rem;" data-aos="fade-up"
+      data-aos-once="true" data-aos-duration="500">
+      <P class="mb-0"
+        style=" font-family: 'Oswald', sans-serif; color: #000000; font-weight: 500; font-size: 2rem; letter-spacing: 1px;">
+        Let Our Agile Team Understand and Serve Your Needs!</P>
+    </div>
+    <!-- First row: Image on the left, text on the right -->
+    <div class="row align-items-center py-2">
+      <div class="col-md-6 order-md-2 order-1 test" data-aos="fade-right" data-aos-once="true" data-aos-duration="500">
+        <div class="container">
+          <div class="image-stack">
+            <div class="image-stack__item image-stack__item--top">
+              <img src="assets/asd2.webp" alt="">
+            </div>
+            <div class="image-stack__item image-stack__item--bottom">
+              <img src="assets/img/Solutions.webp" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 order-md-2 order-1">
+        <p style="font-family: 'Maven Pro'; font-size: 1.3rem; line-height: 2.1rem;" data-aos="fade-left"
+          data-aos-once="true" data-aos-duration="1000">
+          Delphic is a rapidly expanding provider of IT services with a broad range of offerings. Focus on your core
+          business objectives while we manage your IT operations. Our proactive IT management ensures maximum uptime,
+          regular maintenance, and prompt support when you need it most.
+        </p>
+        <p style="font-family: 'Maven Pro'; font-size: 1.3rem; line-height: 2.1rem;" data-aos="fade-left"
+          data-aos-once="true" data-aos-duration="1000">
+          We solve complex business issues with cutting-edge digital solutions for clients ranging from startups to
+          Fortune 500 companies. We pride ourselves on maintaining long-lasting relationships with our clients,
+          partners, and employees
+        </p>
+      </div>
+    </div>
+
+    <div class="we-provide pt-3 pb-3">
+      <div class="wrapper">
+        <h1 class="content">
+          We Provide
+          <ol>
+            <li><span>Active Collaboration</span></li>
+            <li><span>24/7 Ongoing Support</span></li>
+            <li><span>On-Schedule Delivery</span></li>
+            <li><span>After Sales Services</span></li>
+          </ol>
+        </h1>
+      </div>
+    </div>
+
+    <div class="row align-items-center pb-3">
+      <div class="col-md-6">
+        <figure class="snip">
+          <img class="snip__image" src="assets/img/mission2.jpg" alt="card" />
+          <figcaption class="snip__figcaption">
+            <h3 class="snip__title">MISSION</h3>
+            <p class="snip__text">
+              Our mission is to empower organizations by delivering proactive IT management that ensures maximum uptime,
+              regular maintenance, and prompt support. We aim to be your trusted partner in navigating the complexities
+              of technology, enabling you to drive growth and efficiency.
+            </p>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="col-md-6">
+        <figure class="snip">
+          <img class="snip__image" src="assets/img/vision.jpg" alt="card" />
+          <figcaption class="snip__figcaption">
+            <h3 class="snip__title">VISION</h3>
+            <p class="snip__text">
+              We envision a future where technology serves as a seamless extension of your business strategy. By
+              aligning our services with your goals, we strive to enhance operational effectiveness and foster
+              innovation across all levels of your organization.
+            </p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- About Section End -->
+
+
+<!-- Features Start -->
+<section class="container-fluid py-md-2" id="why-choose-us" style="background-color: black;">
+  <div class="container py-5">
+    <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 45rem;"
+      data-aos="fade-up" data-aos-once="true" data-aos-duration="500">
+      <h3 class="fw-bold text-primary text-uppercase" style="font-family: 'Oswald';">Why Choose Us</h3>
+      <P class="mb-0 text-light"
+        style=" font-family: 'Oswald', sans-serif; color: #ffffff; font-weight: 500; font-size: 1.5rem; letter-spacing: 1px;">
+        We Power your Purpose with Insights and Innovation!</P>
+    </div>
+    <div class="row g-5 py-4">
+      <div class="col-lg-4">
+        <div class="row g-5">
+          <div class="col-12 shine" data-aos="zoom-in" data-aos-once="true" data-aos-duration="500"
+            data-aos-delay="500">
+            <div class="rounded d-flex align-items-center justify-content-center mb-3"
+              style="width: 60px; height: 60px; background-color: white; margin: auto;">
+              <i class="fa-solid fa-handshake" style="font-size: 22px; color: #333;"></i>
+            </div>
+            <h4 class="text-light text-center" style="letter-spacing: 1px;">Loyalty</h4>
+            <p class="mb-0 text-light text-center" style="font-family: 'Parkinsans', sans-serif;">
+              Our goal is to have a customer service that is not just the best but legendary.
+            </p>
+          </div>
+          <div class="col-12 shine" data-aos="zoom-in" data-aos-once="true" data-aos-duration="500"
+            data-aos-delay="600">
+            <div class=" rounded d-flex align-items-center justify-content-center mb-3"
+              style="width: 60px; height: 60px; background-color: white; margin: auto;">
+              <i class="fa-solid fa-award text-center" style="font-size: 22px; color: #333;"></i>
+            </div>
+            <h4 class="text-light text-center" style="letter-spacing: 1px;">Reliability</h4>
+            <p class="mb-0 text-light text-center" style="font-family: 'Parkinsans', sans-serif;">
+              This quality, leads our clients, not just to belive us, but to believe in us
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 image-container1">
+        <div class="row g-5">
+          <div class="image-blurred-edge"></div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="row g-5">
+          <div class="col-12 shine" data-aos="zoom-in" data-aos-once="true" data-aos-duration="500"
+            data-aos-delay="500">
+            <div class=" rounded d-flex align-items-center justify-content-center mb-3"
+              style="width: 60px; height: 60px; background-color: white;margin: auto;">
+              <i class="fa-solid fa-users-cog text-center" style="font-size: 22px; color: #333;"></i>
+            </div>
+            <h4 class="text-light text-center" style="letter-spacing: 1px;">Commitment</h4>
+            <p class="mb-0 text-light text-center" style="font-family: 'Parkinsans', sans-serif;">
+              With our committed team, anything is possible with us.</p>
+          </div>
+          <div class="col-12 shine" data-aos="zoom-in" data-aos-once="true" data-aos-duration="500"
+            data-aos-delay="600">
+            <div class=" rounded d-flex align-items-center justify-content-center mb-3"
+              style="width: 60px; height: 60px; background-color: white;margin: auto;">
+              <i class="fa-solid fa-bolt text-center" style="font-size: 22px; color: #333;"></i>
+            </div>
+            <h4 class="text-light text-center" style="letter-spacing: 1px;">Efficiency</h4>
+            <p class="mb-0 text-light text-center" style="font-family: 'Parkinsans', sans-serif;">
+              Its our habit to do right things right.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Features End -->
+
+<!-- Service Start -->
+<section class="container-fluid py-5  banner_img1" id="services" style="background-color: #FFFFFF">
+  <div class="overlay1"></div>
+  <div class="container overlay2">
+    <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" data-aos="fade-up" data-aos-once="true"
+      data-aos-duration="1000" style="max-width: 600px;">
+      <h3 class="fw-bold text-primary text-uppercase" style="font-family:'Oswald'; text-shadow: 0 0  10px #000000">Our
+        Services</h3>
+      <P class="mb-0 text-light" style="font-family: 'Oswald', sans-serif; color: #ffffff;
+        ; font-weight: 500; font-size: 1.5rem; letter-spacing: 1px; text-shadow: 0 0 10px black;">
+        Custom IT Solutions for Your Successful Business</P>
+    </div>
+    <div class="row g-5">
+      <ng-container *ngFor="let item of selectedObj.services; let i = index">
+        <div class="col-lg-4 col-md-6" data-aos="fade-right" data-aos-once="true" data-aos-duration="500"
+          data-aos-delay="500" [attr.data-aos-delay]="(i * 50)">
+          <div
+            class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center text-light">
+            <div class="service-icon">
+              <i [ngClass]="item.icon"></i>
+            </div>
+            <h4 class="mb-3" style="font-family: 'Parkinsans', sans-serif; font-weight: 600 !important;">
+              {{item.heading}}
+            </h4>
+            <p class="m-0" style=" font-family: 'Noto Sans', sans-serif;">
+              {{item.service}}
+            </p>
+            <a class="btn btn-lg btn-primary rounded">
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>
+<!-- Service End -->
+
+<!-- Clients Start -->
+<div class="container-fluid py-0" id="clients">
+  <div class="container py-5">
+    <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 45rem;">
+      <h3 class="fw-bold text-primary text-uppercase" style="font-family: 'Oswald';">Clients</h3>
+      <h1 class="mb-0"
+        style=" font-family: 'Oswald', sans-serif; color: #000000; font-weight: 400; font-size:1.5rem; letter-spacing: 1px;">
+        Meet
+        Our Awesome Clients</h1>
+    </div>
+
+    <div data-aos="zoom-in-up" data-aos-once="true" data-aos-duration="1000" data-aos-delay="500">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-4 d-flex justify-content-center align-items-center"
+          *ngFor="let icon of displayedIcons; let i = index">
+          <div class="icon-wrapper" style="transform-style: preserve-3d;" [@flipAnimation]>
+            <img style="display: block; transform-style: preserve-3d; backface-visibility: hidden;" [src]="icon"
+              class="img-fluid" alt="Client Icon">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Clients End -->
+
+<section class="container-fluid py-5" style="padding-left: 0; padding-right: 0;">
+  <div class="hero shine">
+    <div class="container">
+      <h3 class="display-4">🚀 Elevate Your Business with Cutting-Edge Software Solutions!</h3>
+      <p class="lead">Are you ready to transform your business and stay ahead in the ever-evolving digital landscape?
+        Look no further!</p>
+    </div>
+    <p>
+      At Delphic, we specialize in delivering top-notch software development and outsourcing services tailored to meet
+      your unique needs and propel your business to new heights.
+    </p>
+  </div>
+</section>
+
+<!-- News & Events Start -->
+<div class="container-fluid py-5" id="news-events" style="background-color: #e2e2e2;">
+  <div>
+    <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 45rem;">
+      <h3 class="fw-bold text-primary text-uppercase" style="font-family: 'Oswald';">News & Events</h3>
+      <h1 class="mb-0"
+        style="font-family: 'Oswald', sans-serif; color: #000000; font-weight: 500; font-size: 1.5rem; letter-spacing: 1px;">
+        Stay Updated with Our Latest News</h1>
+    </div>
+    <div class="test">
+      @for(item of eventsCopy; track item.link) {
+      <div class="event-card py-5">
+        <div class="row ">
+          <div class="col-md-2 d-flex align-items-center justify-content-center">
+            <img [src]="item?.image[0]" style="border-radius: 50%; width:100px; height:100px">
+          </div>
+          <div class="col-md-1 d-flex align-items-center" style="flex-direction: column">
+            <p style="font-size: 4rem;font-weight: 600; margin:0">{{item.date}}</p>
+            <p>{{item.monthYear}}</p>
+          </div>
+          <div class="col-md-7">
+            <p style="padding:1rem; font-weight: 400; font-size: 1.4rem;">{{item.description}}</p>
+            <p style="padding-left:1rem; font-size: 1rem;">{{item.venue}}</p>
+          </div>
+          <div class="col-md-2 text-center d-flex align-items-end justify-content-center">
+            <a class="btn btn-primary general-button" data-bs-toggle="modal" data-bs-target="#eventModal"
+              (click)="openModal(item)">Know More <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+    <div class="text-center mt-4" *ngIf="newsEventBn">
+      <button id="loadMoreBtn" (click)="loadMoreEvents()" class="btn btn-secondary">Load More
+        <i class="fa fa-repeat" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: white; border:none">
+          <!-- Close button -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <!-- Event Image Carousel -->
+          <div *ngIf="selectedEvent?.image?.length > 0" id="eventImageCarousel" class="carousel slide mb-3"
+            data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <!-- Loop through the images array -->
+              <div *ngFor="let img of selectedEvent.image; let i = index" class="carousel-item"
+                [class.active]="i === 0">
+                <div class="carousel-image-container">
+                  <img [src]="img" class="d-block w-100" alt="Event Image {{i + 1}}">
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#eventImageCarousel"
+              data-bs-slide="prev" *ngIf="selectedEvent?.image?.length > 1">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#eventImageCarousel"
+              data-bs-slide="next" *ngIf="selectedEvent?.image?.length > 1">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+          <!-- Event Title -->
+          <h2 class="event-title">{{selectedEvent?.title}}</h2>
+
+          <!-- Event Meta Information -->
+          <div class="event-meta">
+            <p><strong>Date:</strong> {{selectedEvent?.date}} {{selectedEvent?.monthYear}}</p>
+            <p><strong>Venue:</strong> {{selectedEvent?.venue}}</p>
+          </div>
+
+          <!-- Event Description -->
+          <div class="event-description" *ngIf="selectedEvent?.description">
+            <p><strong>Description:</strong> {{ selectedEvent.description }}</p>
+          </div>
+
+          <!-- Additional Info -->
+          <div class="event-additional-info" *ngIf="selectedEvent?.additionalInfo">
+            <strong>Additional Info:</strong>
+            <div [innerHTML]="sanitizedAdditionalInfo(selectedEvent.additionalInfo)"></div>
+          </div>
+
+          <!-- Event Footer (Organizer & Contact) -->
+          <div class="event-footer" *ngIf="selectedEvent?.organizer || selectedEvent?.contact">
+            <ng-container *ngIf="selectedEvent?.organizer">
+              <p><strong>Organizer:</strong> {{ selectedEvent.organizer }}</p>
+            </ng-container>
+            <ng-container *ngIf="selectedEvent?.contact">
+              <p><strong>Contact:</strong> {{ selectedEvent.contact }}</p>
+            </ng-container>
+          </div>
+
+          <!-- Modal Footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+
+        </div>
+        <!-- News & Events End -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- News & Events End -->
+
+<!-- Contact Start -->
+<div class="container-fluid py-5 banner_img2" id="contact">
+  <div class="overlay1"></div>
+  <div class="container overlay2">
+    <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" data-aos="fade-up" data-aos-once="true"
+      data-aos-duration="1000" style="max-width: 600px;">
+      <h3 class="fw-bold text-primary text-uppercase" style="text-shadow: 0 0 10px black;; font-family: 'Oswald';">
+        contact</h3>
+      <P class="mb-0 text-light" style=" font-family: 'Oswald', sans-serif; color: #ffffff;
+        ; font-weight: 500; font-size: 1.5rem; letter-spacing: 1px;">
+        Discover our offices across the globe</P>
+    </div>
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-sm-5">
+          <div *ngFor="let region of regions; let i = index" class="col-sm-5 col-md-12 mb-4"
+            (click)="toggleRegion(region.name)">
+            <div class="card contact-card-decor shadow-sm"
+              [attr.data-aos]="i % 2 === 0 ? 'zoom-in-right' : 'zoom-in-left'" data-aos-once="true"
+              data-aos-duration="1000" [ngClass]="{'contact-card-decor-selected': clickedRegionName === region.name}">
+              <div class="card-body text-center text-light">
+                <i [class]="region.icon + ' fa-2x mb-3'"></i>
+                <h5 class="card-title text-light" style="font-family: 'Parkinsans';">{{ region.name }}</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-7" style="display: flex; justify-content: center; align-items: center;">
+          <!-- Collapsible Content for Regions -->
+          <div *ngFor="let region of regions">
+            <div [ngClass]="{'show': region.show}" id="collapse{{ region.name.replace(' ', '') }}" *ngIf="region.show">
+              <div class="row text-center" [@flip]>
+                <div *ngFor="let contact of region.branches" class="col-md-12">
+                  <div class="card card-body shadow-sm card-body-decor card-body-decor-align">
+                    <div style="display: flex; align-items: center; gap:10px; justify-content: center;">
+                      <p><i class="fa fa-building fa-2x" style="color: #fff;" aria-hidden="true"></i></p>
+                      <h3 style="color: #006fff;">{{ contact.name }}</h3>
+                    </div>
+                    <p class="text-light"><b *ngIf="contact.hq">{{ contact.hq + ': ' }}</b>{{ contact.address }}
+                    </p>
+                    <div
+                      style="display: flex; align-items: center; gap:25px; justify-content: center; font-family: 'Parkinsans';">
+                      <p class="text-light"><i class="fa fa-phone"></i> {{ contact.phone }}</p>
+                      <p class="text-light"><i class="fa fa-envelope"></i> {{ contact.email }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Contact End -->
+
+<footer id="footer" class="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+
+        <div class="footer-column">
+          <ul class="footer-links">
+            <li>Hire Angular Developer</li>
+            <li>Hire React Developer</li>
+            <li>Hire Vue.js Developer</li>
+            <li>Hire PHP Developer</li>
+            <li>Hire Node.js Developer</li>
+            <li>Hire Azure/AWS/GCP Devops Engineer</li>
+            <li>Hire Dotnet Developer</li>
+            <li>Hire Java Developer</li>
+            <li>Hire Python Developer</li>
+            <li>Hire Sitecore Developer</li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <ul class="footer-links">
+            <li>Hire Android Developer</li>
+            <li>Hire Reactnative Developer</li>
+            <li>Hire QA Engineer</li>
+            <li>Hire Data Engineer</li>
+            <li>Hire Sharepoint Developer</li>
+            <li>Hire Salesforce Developer</li>
+            <li>Hire ServiceNow Developer</li>
+            <li>Hire PowerApps Engineer</li>
+            <li>Hire Odoo/Zoho Developer</li>
+            <li>Hire Ruby Developer</li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <ul class="footer-links">
+            <li>Hire Android Developer</li>
+            <li>Hire Reactnative Developer</li>
+            <li>Hire QA Engineer</li>
+            <li>Hire Data Engineer</li>
+            <li>Hire Sharepoint Developer</li>
+            <li>Hire Salesforce Developer</li>
+            <li>Hire ServiceNow Developer</li>
+            <li>Hire PowerApps Engineer</li>
+            <li>Hire Odoo/Zoho Developer</li>
+            <li>Hire Ruby Developer</li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Industries We Are Serving</h3>
+          <ul class="footer-links">
+            <li>Education & E-Learning</li>
+            <li>Health Care</li>
+            <li>Banking & Finance</li>
+            <li>Retail & E-Commerce</li>
+            <li>Logistics & Transportation</li>
+            <li>Media & Entertainment</li>
+            <li>Automotive</li>
+            <li>Travel</li>
+            <li>FinTech</li>
+            <li>Product Development</li>
+          </ul>
+        </div>
+      </div>
+      <div class="image-container-footer">
+        <a target="_blank" class="d-flex justify-content-center"
+          href="https://www.glassdoor.co.in/Overview/Working-at-Delphic-EI_IE7749110.11,18.htm">
+          <img style=" width: 350px;height: 180px;" alt="Find us on Glassdoor." src="glassdoor.webp">
+        </a>
+        <a target="_blank" class="d-flex justify-content-center" href='http://www.gulati-industries.in/'>
+          <img height="250px" loading="eager" src='assets/img/logo-png.png' alt="image" />
+        </a>
+        <a target="_blank" class="d-flex justify-content-center"
+          href="https://www.glassdoor.co.in/Overview/Working-at-Delphic-EI_IE7749110.11,18.htm">
+          <img style=" width: 350px;height: 180px;" alt="Find us on Glassdoor." src="ambitionbox.png">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col justify-content-center">
+          <p>© Copyright <b>Delphic</b> All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
