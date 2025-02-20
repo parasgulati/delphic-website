@@ -112,8 +112,8 @@ export class LandingComponent {
             branches: [
                 {
                     name: 'India',
-                    address: 'E-137, Alliance Kingston Estate, Rudrapur - 263153, Uttarakhand, India',
-                    hq: "HQ/RHQ",
+                    address: 'A- 141, Ground Floor, Block C, Sector 41, Noida, Uttar Pradesh 201301, India',
+                    hq: "HQ",
                     email: "sales@delphic.in",
                     phone: "+91-7900739027"
                 }
@@ -137,8 +137,211 @@ export class LandingComponent {
             branches: [
                 {
                     name: 'Malaysia',
-                    address: 'B03-1, 1st Floor, Block B, Garden City Business Centre Jalan Dagang Besar, 68000 Ampang, Selangor, Malaysia',
-                    hq: "RHQ",
+                    address: 'No. 3, Jalan Perdana 6/13, Pandan Perdana, 55300, Kuala Lumpur, Malaysia',
+                    hq: "RO",
+                    email: " sales@delphic.my",
+                    phone: "+60-173392600"
+                }
+            ],
+            services: [
+                { heading: "Resource Outsourcing", icon: "fa fa-shield-alt text-white", service: "We provide contractual resources in all technologies (Staff Augmentation)." },
+                { heading: "Customized Development", icon: "fa fa-chart-pie text-white", service: "We can develop reliable, scalable and secure software solutions." },
+                { heading: "Customized ERP & CRM Solutions", icon: "fa fa-code text-white", service: "We offer full-range of ERP and CRM solutions." },
+                { heading: "Technical Helpdesk / Support Services", icon: "fab fa-android text-white", service: "Our dedicated technical team is available 24*7 to support your customers queries." },
+                { heading: "Upgradation & Migration Services", icon: "fa fa-search text-white", service: "We are experienced and well equipped in Devops and Migration services." }
+            ]
+        },
+        {
+            name: 'Middle East',
+            icon: 'fas fa-globe-asia',
+            accountsHref: "mailto:accounts@delphic.my",
+            acountsMailId: "accounts@delphic.my",
+            infoHref: "mailto:info@delphic.my",
+            infoMailId: "info@delphic.my",
+            show: false,
+            branches: [
+                {
+                    name: 'United Arab Emirates',
+                    address: 'Street: 14, 129 Street, Dubai, United Arab Emirates',
+                    hq: "RO",
+                    email: " sales@delphic.my",
+                    phone: "+60-173392600"
+                }
+            ],
+            services: [
+                { heading: "Resource Outsourcing", icon: "fa fa-shield-alt text-white", service: "We provide contractual resources in all technologies (Staff Augmentation)." },
+                { heading: "Customized Development", icon: "fa fa-chart-pie text-white", service: "We can develop reliable, scalable and secure software solutions." },
+                { heading: "Customized ERP & CRM Solutions", icon: "fa fa-code text-white", service: "We offer full-range of ERP and CRM solutions." },
+                { heading: "Technical Helpdesk / Support Services", icon: "fab fa-android text-white", service: "Our dedicated technical team is available 24*7 to support your customers queries." },
+                { heading: "Upgradation & Migration Services", icon: "fa fa-search text-white", service: "We are experienced and well equipped in Devops and Migration services." }
+            ]
+        },
+        {
+            name: 'North America',
+            icon: 'fas fa-globe-asia',
+            accountsHref: "mailto:accounts@delphic.my",
+            acountsMailId: "accounts@delphic.my",
+            infoHref: "mailto:info@delphic.my",
+            infoMailId: "info@delphic.my",
+            show: false,
+            branches: [
+                {
+                    name: 'United States',
+                    address: '1845 25th St San Francisco, California(CA), 94107',
+                    hq: "RO",
+                    email: " sales@delphic.my",
+                    phone: "+60-173392600"
+                },
+                {
+                    name: 'Canada',
+                    address: '2019 Maria St, Burlington, Ontario, L7R 2G6',
+                    hq: "RO",
+                    email: " sales@delphic.my",
+                    phone: "+60-173392600"
+                }
+            ],
+            services: [
+                { heading: "Resource Outsourcing", icon: "fa fa-shield-alt text-white", service: "We provide contractual resources in all technologies (Staff Augmentation)." },
+                { heading: "Customized Development", icon: "fa fa-chart-pie text-white", service: "We can develop reliable, scalable and secure software solutions." },
+                { heading: "Customized ERP & CRM Solutions", icon: "fa fa-code text-white", service: "We offer full-range of ERP and CRM solutions." },
+                { heading: "Technical Helpdesk / Support Services", icon: "fab fa-android text-white", service: "Our dedicated technical team is available 24*7 to support your customers queries." },
+                { heading: "Upgradation & Migration Services", icon: "fa fa-search text-white", service: "We are experienced and well equipped in Devops and Migration services." }
+            ]
+        },
+        {
+            name: 'North East Asia',
+            icon: 'fas fa-globe-asia',
+            accountsHref: "mailto:accounts@delphic.my",
+            acountsMailId: "accounts@delphic.my",
+            infoHref: "mailto:info@delphic.my",
+            infoMailId: "info@delphic.my",
+            show: false,
+            branches: [
+                {
+                    name: 'Japan',
+                    address: '19-1, Shinjuku 2-chome, Shinjuku-ku, Tokyo',
+                    hq: "RO",
+                    email: " sales@delphic.my",
+                    phone: "+60-173392600"
+                },
+                {
+                    name: 'Russia',
+                    address: '1, Presnenskiy Val Street, Presnensky District, Moscow, 123022',
+                    hq: "RO",
+                    email: " sales@delphic.my",
+                    phone: "+60-173392600"
+                }
+            ],
+            services: [
+                { heading: "Resource Outsourcing", icon: "fa fa-shield-alt text-white", service: "We provide contractual resources in all technologies (Staff Augmentation)." },
+                { heading: "Customized Development", icon: "fa fa-chart-pie text-white", service: "We can develop reliable, scalable and secure software solutions." },
+                { heading: "Customized ERP & CRM Solutions", icon: "fa fa-code text-white", service: "We offer full-range of ERP and CRM solutions." },
+                { heading: "Technical Helpdesk / Support Services", icon: "fab fa-android text-white", service: "Our dedicated technical team is available 24*7 to support your customers queries." },
+                { heading: "Upgradation & Migration Services", icon: "fa fa-search text-white", service: "We are experienced and well equipped in Devops and Migration services." }
+            ]
+        },
+        {
+            name: 'Australia',
+            icon: 'fas fa-globe-asia',
+            accountsHref: "mailto:accounts@delphic.my",
+            acountsMailId: "accounts@delphic.my",
+            infoHref: "mailto:info@delphic.my",
+            infoMailId: "info@delphic.my",
+            show: false,
+            branches: [
+                {
+                    name: 'Australia',
+                    address: '16/18 Mort St, Canberra ACT 2601, Australia',
+                    hq: "RO",
+                    email: " sales@delphic.my",
+                    phone: "+60-173392600"
+                },
+                {
+                    name: 'New Zealand',
+                    address: '83A The Strand, Whakatane Bay of Plenty 5810',
+                    hq: "RO",
+                    email: " sales@delphic.my",
+                    phone: "+60-173392600"
+                }
+            ],
+            services: [
+                { heading: "Resource Outsourcing", icon: "fa fa-shield-alt text-white", service: "We provide contractual resources in all technologies (Staff Augmentation)." },
+                { heading: "Customized Development", icon: "fa fa-chart-pie text-white", service: "We can develop reliable, scalable and secure software solutions." },
+                { heading: "Customized ERP & CRM Solutions", icon: "fa fa-code text-white", service: "We offer full-range of ERP and CRM solutions." },
+                { heading: "Technical Helpdesk / Support Services", icon: "fab fa-android text-white", service: "Our dedicated technical team is available 24*7 to support your customers queries." },
+                { heading: "Upgradation & Migration Services", icon: "fa fa-search text-white", service: "We are experienced and well equipped in Devops and Migration services." }
+            ]
+        },
+        {
+            name: 'North Europe',
+            icon: 'fas fa-globe-asia',
+            accountsHref: "mailto:accounts@delphic.my",
+            acountsMailId: "accounts@delphic.my",
+            infoHref: "mailto:info@delphic.my",
+            infoMailId: "info@delphic.my",
+            show: false,
+            branches: [
+                {
+                    name: 'United Kingdom',
+                    address: '15 Queen Street, London E84 7TL',
+                    hq: "RO",
+                    email: " sales@delphic.my",
+                    phone: "+60-173392600"
+                }
+            ],
+            services: [
+                { heading: "Resource Outsourcing", icon: "fa fa-shield-alt text-white", service: "We provide contractual resources in all technologies (Staff Augmentation)." },
+                { heading: "Customized Development", icon: "fa fa-chart-pie text-white", service: "We can develop reliable, scalable and secure software solutions." },
+                { heading: "Customized ERP & CRM Solutions", icon: "fa fa-code text-white", service: "We offer full-range of ERP and CRM solutions." },
+                { heading: "Technical Helpdesk / Support Services", icon: "fab fa-android text-white", service: "Our dedicated technical team is available 24*7 to support your customers queries." },
+                { heading: "Upgradation & Migration Services", icon: "fa fa-search text-white", service: "We are experienced and well equipped in Devops and Migration services." }
+            ]
+        },
+        {
+            name: 'South Europe',
+            icon: 'fas fa-globe-asia',
+            accountsHref: "mailto:accounts@delphic.my",
+            acountsMailId: "accounts@delphic.my",
+            infoHref: "mailto:info@delphic.my",
+            infoMailId: "info@delphic.my",
+            show: false,
+            branches: [
+                {
+                    name: 'Italy',
+                    address: 'Via Varrone 100, Catania, 95124',
+                    hq: "RO",
+                    email: " sales@delphic.my",
+                    phone: "+60-173392600"
+                }
+            ],
+            services: [
+                { heading: "Resource Outsourcing", icon: "fa fa-shield-alt text-white", service: "We provide contractual resources in all technologies (Staff Augmentation)." },
+                { heading: "Customized Development", icon: "fa fa-chart-pie text-white", service: "We can develop reliable, scalable and secure software solutions." },
+                { heading: "Customized ERP & CRM Solutions", icon: "fa fa-code text-white", service: "We offer full-range of ERP and CRM solutions." },
+                { heading: "Technical Helpdesk / Support Services", icon: "fab fa-android text-white", service: "Our dedicated technical team is available 24*7 to support your customers queries." },
+                { heading: "Upgradation & Migration Services", icon: "fa fa-search text-white", service: "We are experienced and well equipped in Devops and Migration services." }
+            ]
+        },
+        {
+            name: 'West Europe',
+            icon: 'fas fa-globe-asia',
+            accountsHref: "mailto:accounts@delphic.my",
+            acountsMailId: "accounts@delphic.my",
+            infoHref: "mailto:info@delphic.my",
+            infoMailId: "info@delphic.my",
+            show: false,
+            branches: [
+                {
+                    name: 'Germany',
+                    address: 'Budapester Strasse 7, Barenburg, Niedersachsen, 27245',
+                    hq: "RO",
+                    email: " sales@delphic.my",
+                    phone: "+60-173392600"
+                },
+                {
+                    name: 'Switzerland',
+                    address: 'Wolfensbergstrasse 83, Riein, 7128',
+                    hq: "RO",
                     email: " sales@delphic.my",
                     phone: "+60-173392600"
                 }
@@ -157,9 +360,9 @@ export class LandingComponent {
         { label: 'Home', id: 'home-nav', link: '#home' },
         { label: 'About', id: 'about-nav', link: '#about' },
         { label: 'Services', id: 'services-nav', link: '#services' },
-        { label: 'Blog', id: 'blog-nav', link: 'blog' },
-        { label: 'Gallery', id: 'gallery-nav', link: 'gallery' },
-        { label: 'Carrers', id: 'careers-nav', link: 'https://www.linkedin.com/company/delphicservices', target: '_blank' },
+   //     { label: 'Blog', id: 'blog-nav', link: 'blog' },
+   //     { label: 'Gallery', id: 'gallery-nav', link: 'gallery' },
+    //    { label: 'Carrers', id: 'careers-nav', link: 'https://www.linkedin.com/jobs/search/?currentJobId=3792529272&f_C=79698771&geoId=92000000&location=Worldwide&origin=JOB_SEARCH_PAGE_SEARCH_BUTTON&refresh=true', target: '_blank' },
         { label: 'Contact', id: 'contact-nav', link: '#contact' }
     ];
     selectedObj: any;

@@ -3,15 +3,19 @@
   <div class="row gx-0">
     <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
       <div class="d-inline-flex align-items-center" style="height: 45px; gap:1.5rem">
-        <small class="text-light"><i class="fa fa-envelope me-2" style="color: #239ec2;"></i>
-          <a href="mailto:accounts@delphic.in"
+        <small class="text-light">
+          <!--<i class="fa fa-envelope me-2" style="color: #239ec2;"></i>
+        
+        <a href="mailto:accounts@delphic.in"
             style="color: white; text-decoration: none;font-family: 'Open Sans';">accounts&#64;delphic.in</a>
+        -->
         </small>
         <small class="text-light"><i class="fa fa-envelope me-2" style="color: #239ec2;"></i>
           <a href="mailto:info@delphic.in"
             style="color: white;text-decoration: none;font-family: 'Open Sans';">info&#64;delphic.in</a>
         </small>
         <!-- Dropdown Menu -->
+        <!--
         <div class="dropdown me-2">
           <button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton"
             data-bs-toggle="dropdown" aria-expanded="false">
@@ -23,6 +27,7 @@
                 Asia</a></li>
           </ul>
         </div>
+      -->
       </div>
     </div>
     <div class="col-lg-4 text-center text-lg-end">
@@ -56,7 +61,7 @@
         </a>
       </li>
       <li class="nav-item" id="carrers-nav">
-        <a target="_blank" href="https://www.linkedin.com/company/delphicservices" class="nav-link"
+        <a target="_blank" href="https://www.linkedin.com/jobs/search/?currentJobId=3792529272&f_C=79698771&geoId=92000000&location=Worldwide&origin=JOB_SEARCH_PAGE_SEARCH_BUTTON&refresh=true" class="nav-link"
           [ngClass]="{'active': activeLink === 'carrers'}">
           <span class="line"></span>
         </a>
@@ -381,122 +386,6 @@
   </div>
 </section>
 
-<!-- News & Events Start -->
-<div class="container-fluid py-5" id="news-events" style="background-color: #e2e2e2;">
-  <div>
-    <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 45rem;">
-      <h3 class="fw-bold text-primary text-uppercase" style="font-family: 'Oswald';">News & Events</h3>
-      <h1 class="mb-0"
-        style="font-family: 'Oswald', sans-serif; color: #000000; font-weight: 500; font-size: 1.5rem; letter-spacing: 1px;">
-        Stay Updated with Our Latest News</h1>
-    </div>
-    <div class="test">
-      @for(item of eventsCopy; track item.link) {
-      <div class="event-card py-5">
-        <div class="row ">
-          <div class="col-md-2 d-flex align-items-center justify-content-center">
-            <img [src]="item?.image[0]" style="border-radius: 50%; width:100px; height:100px">
-          </div>
-          <div class="col-md-1 d-flex align-items-center" style="flex-direction: column">
-            <p style="font-size: 4rem;font-weight: 600; margin:0">{{item.date}}</p>
-            <p>{{item.monthYear}}</p>
-          </div>
-          <div class="col-md-7">
-            <p style="padding:1rem; font-weight: 400; font-size: 1.4rem;">{{item.description}}</p>
-            <p style="padding-left:1rem; font-size: 1rem;">{{item.venue}}</p>
-          </div>
-          <div class="col-md-2 text-center d-flex align-items-end justify-content-center">
-            <a class="btn btn-primary general-button" data-bs-toggle="modal" data-bs-target="#eventModal"
-              (click)="openModal(item)">Know More <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-          </div>
-        </div>
-      </div>
-      }
-    </div>
-    <div class="text-center mt-4" *ngIf="newsEventBn">
-      <button id="loadMoreBtn" (click)="loadMoreEvents()" class="btn btn-secondary">Load More
-        <i class="fa fa-repeat" aria-hidden="true"></i>
-      </button>
-    </div>
-  </div>
-
-  <!-- Modal -->
-  <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header" style="background-color: white; border:none">
-          <!-- Close button -->
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-
-          <!-- Event Image Carousel -->
-          <div *ngIf="selectedEvent?.image?.length > 0" id="eventImageCarousel" class="carousel slide mb-3"
-            data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <!-- Loop through the images array -->
-              <div *ngFor="let img of selectedEvent.image; let i = index" class="carousel-item"
-                [class.active]="i === 0">
-                <div class="carousel-image-container">
-                  <img [src]="img" class="d-block w-100" alt="Event Image {{i + 1}}">
-                </div>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#eventImageCarousel"
-              data-bs-slide="prev" *ngIf="selectedEvent?.image?.length > 1">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#eventImageCarousel"
-              data-bs-slide="next" *ngIf="selectedEvent?.image?.length > 1">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-
-          <!-- Event Title -->
-          <h2 class="event-title">{{selectedEvent?.title}}</h2>
-
-          <!-- Event Meta Information -->
-          <div class="event-meta">
-            <p><strong>Date:</strong> {{selectedEvent?.date}} {{selectedEvent?.monthYear}}</p>
-            <p><strong>Venue:</strong> {{selectedEvent?.venue}}</p>
-          </div>
-
-          <!-- Event Description -->
-          <div class="event-description" *ngIf="selectedEvent?.description">
-            <p><strong>Description:</strong> {{ selectedEvent.description }}</p>
-          </div>
-
-          <!-- Additional Info -->
-          <div class="event-additional-info" *ngIf="selectedEvent?.additionalInfo">
-            <strong>Additional Info:</strong>
-            <div [innerHTML]="sanitizedAdditionalInfo(selectedEvent.additionalInfo)"></div>
-          </div>
-
-          <!-- Event Footer (Organizer & Contact) -->
-          <div class="event-footer" *ngIf="selectedEvent?.organizer || selectedEvent?.contact">
-            <ng-container *ngIf="selectedEvent?.organizer">
-              <p><strong>Organizer:</strong> {{ selectedEvent.organizer }}</p>
-            </ng-container>
-            <ng-container *ngIf="selectedEvent?.contact">
-              <p><strong>Contact:</strong> {{ selectedEvent.contact }}</p>
-            </ng-container>
-          </div>
-
-          <!-- Modal Footer -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          </div>
-
-        </div>
-        <!-- News & Events End -->
-      </div>
-    </div>
-  </div>
-</div>
-<!-- News & Events End -->
-
 <!-- Contact Start -->
 <div class="container-fluid py-5 banner_img2" id="contact">
   <div class="overlay1"></div>
@@ -538,11 +427,12 @@
                     </div>
                     <p class="text-light"><b *ngIf="contact.hq">{{ contact.hq + ': ' }}</b>{{ contact.address }}
                     </p>
+                    <!--
                     <div
                       style="display: flex; align-items: center; gap:25px; justify-content: center; font-family: 'Parkinsans';">
                       <p class="text-light"><i class="fa fa-phone"></i> {{ contact.phone }}</p>
                       <p class="text-light"><i class="fa fa-envelope"></i> {{ contact.email }}</p>
-                    </div>
+                    </div>-->
                   </div>
                 </div>
               </div>
@@ -630,7 +520,7 @@
           <img height="250px" loading="eager" src='assets/img/logo-png.png' alt="image" />
         </a>
         <a target="_blank" class="d-flex justify-content-center"
-          href="https://www.glassdoor.co.in/Overview/Working-at-Delphic-EI_IE7749110.11,18.htm">
+          href="https://www.ambitionbox.com/overview/delphic-overview?utm_source=employer-dashboard&utm_campaign=delphic&utm_medium=badges">
           <img style=" width: 350px;height: 180px;" alt="Find us on Glassdoor." src="ambitionbox.png">
         </a>
       </div>
