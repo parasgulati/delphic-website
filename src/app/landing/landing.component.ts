@@ -100,6 +100,15 @@ export class LandingComponent {
             additionalInfo: '<p>Enjoy refreshments while networking with top professionals.</p>'
         }
     ];
+    industry:any[]= [
+        { heading: "Hospitality Travel & Lifestyle", icon: "fa fa-shield-alt text-white"},
+        { heading: "Education & Knowledge Services", icon: "fa fa-shield-alt text-white"},
+        { heading: "Manufacturing & Industrial", icon: "fa fa-shield-alt text-white"},
+        { heading: "Finance & Business Services", icon: "fa fa-shield-alt text-white"},
+        { heading: "Technology & Digital", icon: "fa fa-shield-alt text-white"},
+        { heading: "Real Estate & Urban Services", icon: "fa fa-shield-alt text-white"},
+        { heading: "Healthcare & Life Sciences", icon: "fa fa-shield-alt text-white"}
+    ]
     regions: any[] = [
         {
             name: 'South Asia',
@@ -111,11 +120,56 @@ export class LandingComponent {
             show: false,
             branches: [
                 {
-                    name: 'India',
-                    address: 'A- 141, Ground Floor, Block C, Sector 41, Noida, Uttar Pradesh 201301, India',
-                    hq: "HQ",
-                    email: "sales@delphic.in",
-                    phone: "+91-7900739027"
+                    name: 'Gurugram, India (Global Headquarters)',
+                    address: '6th Floor, Good Earth Business Bay -1, Golf Course Rd, Ext, Sector 58, Gurugram, Haryana 122101',
+                },
+                {
+                    name: 'Noida, India (Eng. Hub)',
+                    address: 'Knowledge Boulevard, Sector - 62, Noida, Uttar Pradesh 201309',
+                },
+                {
+                    name: 'Bengaluru, India (Eng. Hub)',
+                    address: 'Vista Spaces, Byatarayanapura Village, Bellary Main Road, Yelahanka Hobli, Bengaluru North Taluk, Jakkuru Bengaluru 560092',
+                },
+                {
+                    name: 'Hyderabad, India (Eng. Hub)',
+                    address: '5th Floor, vasavi MPM grand, 602/B2, Ameerpet, Hyderabad, Telangana 500038',
+                },
+                {
+                    name: 'Pune, India (Eng. Hub)',
+                    address: 'Viman Nagar, Pune, 411014',
+                },
+                {
+                    name: 'Chennai, India (Eng. Hub)',
+                    address: 'A4, Chandrasekaran avenue, 1st Main Rd, Thoraipakkam, Tamil Nadu 600097',
+                },
+                {
+                    name: 'Mumbai, India (Eng. Hub)',
+                    address: 'Platform Floor, Tower 7, J2, Station, above Belapur Railway Station, Sector 11, CBD Belapur, Navi Mumbai, Maharashtra 400614',
+                },
+                {
+                    name: 'Kolkata, India (Eng. Hub)',
+                    address: '19, RN Mukherjee Rd, Esplanade, B.B.D. Bagh, Kolkata, West Bengal 700001',
+                },
+                {
+                    name: 'Indore, India (Eng. Hub)',
+                    address: 'Apollo premier, Vijay Nagar Square, Vijay Nagar, Ratna Lok Colony, Indore, Madhya Pradesh 452010',
+                },
+                {
+                    name: 'Jaipur, India (Tech. Ops. Center)',
+                    address: 'D-251, Hanuman Nagar, Vaishali Nagar, Jaipur, Rajasthan 302021',
+                },
+                {
+                    name: 'Mohali, India (Eng. Hub)',
+                    address: 'E 279, Industrial Area, Sector 75, Sahibzada Ajit Singh Nagar, Punjab 160055',
+                },
+                {
+                    name: 'Ahmedabad, India (Sales Office)',
+                    address: 'C-201, 2nd Floor, The First, B/h Keshav Baugh Party Plot Nr. Shivalik High-Street, Vastrapur, Ahmedabad, Gujarat 380015',
+                },
+                {
+                    name: 'Nagpur, India (Eng. Hub)',
+                    address: '2nd floor, Near, bus stop, Plot no 18, Khamla Rd, next to Orange city hospital, Sawarkar Nagar, Vivekanand Nagar, Nagpur, Maharashtra 440015',
                 }
             ],
             services: [
@@ -136,11 +190,8 @@ export class LandingComponent {
             show: false,
             branches: [
                 {
-                    name: 'Malaysia',
-                    address: 'No. 3, Jalan Perdana 6/13, Pandan Perdana, 55300, Kuala Lumpur, Malaysia',
-                    hq: "RO",
-                    email: " sales@delphic.my",
-                    phone: "+60-173392600"
+                    name: 'Malaysia (Sales Office)',
+                    address: 'No. 3, Jalan Perdana 6/13, Pandan Perdana, 55300, Kuala Lumpur, Malaysia'
                 }
             ],
             services: [
@@ -161,11 +212,8 @@ export class LandingComponent {
             show: false,
             branches: [
                 {
-                    name: 'United Arab Emirates',
-                    address: 'Street: 14, 129 Street, Dubai, United Arab Emirates',
-                    hq: "RO",
-                    email: " sales@delphic.my",
-                    phone: "+60-173392600"
+                    name: 'United Arab Emirates (Sales Office)',
+                    address: 'Street: 14, 129 Street, Dubai, United Arab Emirates'
                 }
             ],
             services: [
@@ -186,18 +234,12 @@ export class LandingComponent {
             show: false,
             branches: [
                 {
-                    name: 'United States',
+                    name: 'United States (Sales Office)',
                     address: '1845 25th St San Francisco, California(CA), 94107',
-                    hq: "RO",
-                    email: " sales@delphic.my",
-                    phone: "+60-173392600"
                 },
                 {
-                    name: 'Canada',
-                    address: '2019 Maria St, Burlington, Ontario, L7R 2G6',
-                    hq: "RO",
-                    email: " sales@delphic.my",
-                    phone: "+60-173392600"
+                    name: 'Canada (Sales Office)',
+                    address: '2019 Maria St, Burlington, Ontario, L7R 2G6'
                 }
             ],
             services: [
@@ -218,18 +260,12 @@ export class LandingComponent {
             show: false,
             branches: [
                 {
-                    name: 'Japan',
-                    address: '19-1, Shinjuku 2-chome, Shinjuku-ku, Tokyo',
-                    hq: "RO",
-                    email: " sales@delphic.my",
-                    phone: "+60-173392600"
+                    name: 'Japan (Sales Office)',
+                    address: '19-1, Shinjuku 2-chome, Shinjuku-ku, Tokyo'
                 },
                 {
-                    name: 'Russia',
-                    address: '1, Presnenskiy Val Street, Presnensky District, Moscow, 123022',
-                    hq: "RO",
-                    email: " sales@delphic.my",
-                    phone: "+60-173392600"
+                    name: 'Russia (Sales Office)',
+                    address: '1, Presnenskiy Val Street, Presnensky District, Moscow, 123022'
                 }
             ],
             services: [
@@ -250,18 +286,12 @@ export class LandingComponent {
             show: false,
             branches: [
                 {
-                    name: 'Australia',
-                    address: '16/18 Mort St, Canberra ACT 2601, Australia',
-                    hq: "RO",
-                    email: " sales@delphic.my",
-                    phone: "+60-173392600"
+                    name: 'Australia (Sales Office)',
+                    address: '16/18 Mort St, Canberra ACT 2601, Australia'
                 },
                 {
-                    name: 'New Zealand',
-                    address: '83A The Strand, Whakatane Bay of Plenty 5810',
-                    hq: "RO",
-                    email: " sales@delphic.my",
-                    phone: "+60-173392600"
+                    name: 'New Zealand (Sales Office)',
+                    address: '83A The Strand, Whakatane Bay of Plenty 5810'
                 }
             ],
             services: [
@@ -282,11 +312,8 @@ export class LandingComponent {
             show: false,
             branches: [
                 {
-                    name: 'United Kingdom',
-                    address: '15 Queen Street, London E84 7TL',
-                    hq: "RO",
-                    email: " sales@delphic.my",
-                    phone: "+60-173392600"
+                    name: 'United Kingdom (Sales Office)',
+                    address: '15 Queen Street, London E84 7TL'
                 }
             ],
             services: [
@@ -307,11 +334,8 @@ export class LandingComponent {
             show: false,
             branches: [
                 {
-                    name: 'Italy',
+                    name: 'Italy (Sales Office)',
                     address: 'Via Varrone 100, Catania, 95124',
-                    hq: "RO",
-                    email: " sales@delphic.my",
-                    phone: "+60-173392600"
                 }
             ],
             services: [
@@ -332,18 +356,12 @@ export class LandingComponent {
             show: false,
             branches: [
                 {
-                    name: 'Germany',
+                    name: 'Germany (Sales Office)',
                     address: 'Budapester Strasse 7, Barenburg, Niedersachsen, 27245',
-                    hq: "RO",
-                    email: " sales@delphic.my",
-                    phone: "+60-173392600"
                 },
                 {
-                    name: 'Switzerland',
+                    name: 'Switzerland (Sales Office)',
                     address: 'Wolfensbergstrasse 83, Riein, 7128',
-                    hq: "RO",
-                    email: " sales@delphic.my",
-                    phone: "+60-173392600"
                 }
             ],
             services: [
