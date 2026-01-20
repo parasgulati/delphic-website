@@ -120,8 +120,12 @@ export class LandingComponent {
             show: false,
             branches: [
                 {
-                    name: 'Gurugram, India (Global Headquarters)',
-                    address: '6th Floor, Good Earth Business Bay -1, Golf Course Rd, Ext, Sector 58, Gurugram, Haryana 122101',
+                    name: 'Gurugram, India (Head Office)',
+                    address: 'Orchid Business Park, Sohna Rd, Central Park II, Sector 48, Gurugram, Haryana 122018',
+                },
+                {
+                    name: 'Ahmedabad, India (Corporate Office)',
+                    address: 'A-514, Money Plant High Street by V Square Group, Gota, Ahmedabad- 382470, Gujarat',
                 },
                 {
                     name: 'Noida, India (Eng. Hub)',
@@ -156,16 +160,12 @@ export class LandingComponent {
                     address: 'Apollo premier, Vijay Nagar Square, Vijay Nagar, Ratna Lok Colony, Indore, Madhya Pradesh 452010',
                 },
                 {
-                    name: 'Jaipur, India (Tech. Ops. Center)',
+                    name: 'Jaipur, India (Eng. Hub)',
                     address: 'D-251, Hanuman Nagar, Vaishali Nagar, Jaipur, Rajasthan 302021',
                 },
                 {
                     name: 'Mohali, India (Eng. Hub)',
                     address: 'E 279, Industrial Area, Sector 75, Sahibzada Ajit Singh Nagar, Punjab 160055',
-                },
-                {
-                    name: 'Ahmedabad, India (Sales Office)',
-                    address: 'C-201, 2nd Floor, The First, B/h Keshav Baugh Party Plot Nr. Shivalik High-Street, Vastrapur, Ahmedabad, Gujarat 380015',
                 },
                 {
                     name: 'Nagpur, India (Eng. Hub)',
@@ -189,9 +189,13 @@ export class LandingComponent {
             infoMailId: "info@delphic.my",
             show: false,
             branches: [
-                {
+                /*{
                     name: 'Malaysia (Sales Office)',
                     address: 'No. 3, Jalan Perdana 6/13, Pandan Perdana, 55300, Kuala Lumpur, Malaysia'
+                },*/
+                {
+                    name: 'Singapore (Sales Office)',
+                    address: 'Level 4-5, Singapore Land Tower, 50 Raffles Place, 048623, Singapore'
                 }
             ],
             services: [
@@ -211,9 +215,13 @@ export class LandingComponent {
             infoMailId: "info@delphic.my",
             show: false,
             branches: [
-                {
+                /*{
                     name: 'United Arab Emirates (Sales Office)',
                     address: 'Street: 14, 129 Street, Dubai, United Arab Emirates'
+                },*/
+                {
+                    name: 'United Arab Emirates (Sales Office)',
+                    address: 'Al Khatem Tower, ADGM Square, Al Maryah Island Abu Dhabi, Abu Dhabi'
                 }
             ],
             services: [
@@ -250,7 +258,7 @@ export class LandingComponent {
                 { heading: "Upgradation & Migration Services", icon: "fa fa-search text-white", service: "We are experienced and well equipped in Devops and Migration services." }
             ]
         },
-        {
+       /* {
             name: 'North East Asia',
             icon: 'fas fa-globe-asia',
             accountsHref: "mailto:accounts@delphic.my",
@@ -275,8 +283,8 @@ export class LandingComponent {
                 { heading: "Technical Helpdesk / Support Services", icon: "fab fa-android text-white", service: "Our dedicated technical team is available 24*7 to support your customers queries." },
                 { heading: "Upgradation & Migration Services", icon: "fa fa-search text-white", service: "We are experienced and well equipped in Devops and Migration services." }
             ]
-        },
-        {
+        },*/
+      /*  {
             name: 'Australia',
             icon: 'fas fa-globe-asia',
             accountsHref: "mailto:accounts@delphic.my",
@@ -323,8 +331,8 @@ export class LandingComponent {
                 { heading: "Technical Helpdesk / Support Services", icon: "fab fa-android text-white", service: "Our dedicated technical team is available 24*7 to support your customers queries." },
                 { heading: "Upgradation & Migration Services", icon: "fa fa-search text-white", service: "We are experienced and well equipped in Devops and Migration services." }
             ]
-        },
-        {
+        },*/
+      /*  {
             name: 'South Europe',
             icon: 'fas fa-globe-asia',
             accountsHref: "mailto:accounts@delphic.my",
@@ -345,7 +353,8 @@ export class LandingComponent {
                 { heading: "Technical Helpdesk / Support Services", icon: "fab fa-android text-white", service: "Our dedicated technical team is available 24*7 to support your customers queries." },
                 { heading: "Upgradation & Migration Services", icon: "fa fa-search text-white", service: "We are experienced and well equipped in Devops and Migration services." }
             ]
-        },
+        },*/
+       /*
         {
             name: 'West Europe',
             icon: 'fas fa-globe-asia',
@@ -372,15 +381,16 @@ export class LandingComponent {
                 { heading: "Upgradation & Migration Services", icon: "fa fa-search text-white", service: "We are experienced and well equipped in Devops and Migration services." }
             ]
         }
+        */
         // Additional regions can be added here
     ];
-    navItems: { label: string, link: string, id: string, target?: string }[] = [
+    navItems: { label: string, link: string, id: string, target?: string,  rel?: string; }[] = [
         { label: 'Home', id: 'home-nav', link: '#home' },
         { label: 'About', id: 'about-nav', link: '#about' },
         { label: 'Services', id: 'services-nav', link: '#services' },
    //     { label: 'Blog', id: 'blog-nav', link: 'blog' },
    //     { label: 'Gallery', id: 'gallery-nav', link: 'gallery' },
-    //    { label: 'Carrers', id: 'careers-nav', link: 'https://www.linkedin.com/jobs/search/?currentJobId=3792529272&f_C=79698771&geoId=92000000&location=Worldwide&origin=JOB_SEARCH_PAGE_SEARCH_BUTTON&refresh=true', target: '_blank' },
+        { label: 'Careers', id: 'careers-nav', link: 'https://app.dover.com/jobs/delphic', target: '_blank', rel: 'noopener noreferrer' },
         { label: 'Contact', id: 'contact-nav', link: '#contact' }
     ];
     selectedObj: any;

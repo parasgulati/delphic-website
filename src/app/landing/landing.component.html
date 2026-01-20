@@ -62,9 +62,9 @@
           <span class="line"></span>
         </a>
       </li>
-      <li class="nav-item" id="carrers-nav">
-        <a target="_blank" href="https://www.linkedin.com/jobs/search/?currentJobId=3792529272&f_C=79698771&geoId=92000000&location=Worldwide&origin=JOB_SEARCH_PAGE_SEARCH_BUTTON&refresh=true" class="nav-link"
-          [ngClass]="{'active': activeLink === 'carrers'}">
+      <li class="nav-item" id="careers-nav">
+         <a target="_blank" href="https://app.dover.com/jobs/delphic" class="nav-link"
+          [ngClass]="{'active': activeLink === 'Careers'}">
           <span class="line"></span>
         </a>
       </li>
@@ -90,20 +90,35 @@
       <span class="fa fa-bars"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse" data-aos="slide-left" data-aos-duration="2000" data-aos-once="true">
-      <div class="navbar-nav ms-auto py-0">
-        @for (item of navItems; track item.link)
-        {
-        <a class="nav-item nav-link" [ngClass]="{'active': activeLink === item.link.substring(1)}"
-          *ngIf="item.link.startsWith('#')" (click)="scrollToSection(item.link.substring(1))">
-          {{ item.label }}
-        </a>
+      
+      
+   <div class="navbar-nav ms-auto py-0">
 
-        <a class="nav-item nav-link" *ngIf="!item.link.startsWith('#')" [routerLink]="item.link"
-          target="{{ item.target }}">
-          {{ item.label }}
-        </a>
-        }
-      </div>
+    @for (item of navItems; track item.link) {
+
+      <!-- Section scroll links (#home, #about, etc.) -->
+      <a
+        class="nav-item nav-link"
+        [ngClass]="{ 'active': activeLink === item.link.substring(1) }"
+        *ngIf="item.link.startsWith('#')"
+        (click)="scrollToSection(item.link.substring(1))"
+      >
+        {{ item.label }}
+      </a>
+
+      <!-- External links (Careers) -->
+      <a
+        class="nav-item nav-link"
+        *ngIf="item.link.startsWith('http')"
+        [href]="item.link"
+        [attr.target]="item.target || '_self'"
+        [attr.rel]="item.rel || null"
+      >
+        {{ item.label }}
+      </a>
+
+    }
+  </div>
 
       <!-- Dropdown visible only for smaller screens -->
       <div class="dropdown d-sm-none me-2 d-flex justify-content-center align-items-center">
