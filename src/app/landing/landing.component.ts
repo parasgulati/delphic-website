@@ -125,7 +125,7 @@ export class LandingComponent {
                 },
                 {
                     name: 'Ahmedabad, India (Corporate Office)',
-                    address: 'A-514, Money Plant High Street by V Square Group, Gota, Ahmedabad- 382470, Gujarat',
+                    address: 'Money Plant High Street by V Square Group, Gota, Ahmedabad- 382470, Gujarat',
                 },
                 /*{
                     name: 'Noida, India (Eng. Hub)',
