@@ -127,7 +127,7 @@ export class LandingComponent {
                     name: 'Ahmedabad, India (Corporate Office)',
                     address: 'A-514, Money Plant High Street by V Square Group, Gota, Ahmedabad- 382470, Gujarat',
                 },
-                {
+                /*{
                     name: 'Noida, India (Eng. Hub)',
                     address: 'Knowledge Boulevard, Sector - 62, Noida, Uttar Pradesh 201309',
                 },
@@ -156,10 +156,6 @@ export class LandingComponent {
                     address: '19, RN Mukherjee Rd, Esplanade, B.B.D. Bagh, Kolkata, West Bengal 700001',
                 },
                 {
-                    name: 'Indore, India (Eng. Hub)',
-                    address: 'Apollo premier, Vijay Nagar Square, Vijay Nagar, Ratna Lok Colony, Indore, Madhya Pradesh 452010',
-                },
-                {
                     name: 'Jaipur, India (Eng. Hub)',
                     address: 'D-251, Hanuman Nagar, Vaishali Nagar, Jaipur, Rajasthan 302021',
                 },
@@ -171,6 +167,11 @@ export class LandingComponent {
                     name: 'Nagpur, India (Eng. Hub)',
                     address: '2nd floor, Near, bus stop, Plot no 18, Khamla Rd, next to Orange city hospital, Sawarkar Nagar, Vivekanand Nagar, Nagpur, Maharashtra 440015',
                 }
+                    */
+                {
+                    name: 'Indore, India (Eng. Hub)',
+                    address: 'Apollo premier, Vijay Nagar Square, Vijay Nagar, Ratna Lok Colony, Indore, Madhya Pradesh 452010',
+                },
             ],
             services: [
                 { heading: "Resource Outsourcing", icon: "fa fa-shield-alt text-white", service: "We provide contractual resources in all technologies (Staff Augmentation)." },
